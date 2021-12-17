@@ -2765,4 +2765,62 @@ amac_manager_cancelled_info # 中国证券投资基金业协会-信息公示-诚
 1.2.52 fix: fix futures_foreign_commodity_realtime interface
 
 1.2.53 add: add get_ine_daily interface
+
+1.2.54 fix: fix bond_zh_hs_cov_min interface
+
+1.2.55 add: add stock_repurchase_em interface
+
+1.2.56 fix: fix stock_zh_a_tick_163 interface
+
+1.2.57 add: add stock_us_hist_fu interface
+
+1.2.58 fix: fix stock_board_concept_hist_ths interface
+
+1.2.59 fix: fix macro_china_hk interface
+
+1.2.60 fix: fix macro_china_hk interface
+
+1.2.61 fix: fix stock_board_concept_hist_ths interface
+
+1.2.62 fix: fix stock_dzjy_sctj interface
+
+1.2.63 add: add spot_hist_sge interface
+
+1.2.64 add: add spot_silver_benchmark_sge interface
+
+1.2.65 remove: remove wdbank interface
+
+1.2.66 add: add spot_golden_benchmark_sge interface
+
+1.2.67 fix: fix air_quality_hebei interface
+
+1.2.68 fix: fix stock_financial_hk_analysis_indicator_em interface
+
+1.2.69 fix: fix get_futures_daily interface
+
+1.2.70 fix: fix sw_index_spot interface
+
+1.2.71 add: add sw_index_third_info interface
+
+1.2.72 add: add sw_index_third_cons interface
+
+1.2.73 fix: fix sw_index_third_cons interface
+
+1.2.74 fix: fix macro_australia and macro_canada interface
+
+1.2.75 fix: fix docs interface
+
+1.2.76 fix: fix amac_person_fund_org_list interface
+
+1.2.77 add: add bond_conv_adj_logs_jsl interface
+
+1.2.78 fix: fix amac_person_fund_org_list interface
+
+1.2.79 fix: fix amac_person_fund_org_list interface
+
+1.2.80 fix: fix sw_index_daily interface
+
+1.2.81 fix: fix stock_us_hist_fu interface
+
+1.2.82 fix: fix spot_symbol_table_sge interface
 ```

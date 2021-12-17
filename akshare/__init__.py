@@ -1675,9 +1675,38 @@ amac_manager_cancelled_info # 中国证券投资基金业协会-信息公示-诚
 1.2.51 add: add futures_hq_subscribe_exchange_symbol interface
 1.2.52 fix: fix futures_foreign_commodity_realtime interface
 1.2.53 add: add get_ine_daily interface
+1.2.54 fix: fix bond_zh_hs_cov_min interface
+1.2.55 add: add stock_repurchase_em interface
+1.2.56 fix: fix stock_zh_a_tick_163 interface
+1.2.57 add: add stock_us_hist_fu interface
+1.2.58 fix: fix stock_board_concept_hist_ths interface
+1.2.59 fix: fix macro_china_hk interface
+1.2.60 fix: fix macro_china_hk interface
+1.2.61 fix: fix stock_board_concept_hist_ths interface
+1.2.62 fix: fix stock_dzjy_sctj interface
+1.2.63 add: add spot_hist_sge interface
+1.2.64 add: add spot_silver_benchmark_sge interface
+1.2.65 remove: remove wdbank interface
+1.2.66 add: add spot_golden_benchmark_sge interface
+1.2.67 fix: fix air_quality_hebei interface
+1.2.68 fix: fix stock_financial_hk_analysis_indicator_em interface
+1.2.69 fix: fix get_futures_daily interface
+1.2.70 fix: fix sw_index_spot interface
+1.2.71 add: add sw_index_third_info interface
+1.2.72 add: add sw_index_third_cons interface
+1.2.73 fix: fix sw_index_third_cons interface
+1.2.74 fix: fix macro_australia and macro_canada interface
+1.2.75 fix: fix docs interface
+1.2.76 fix: fix amac_person_fund_org_list interface
+1.2.77 add: add bond_conv_adj_logs_jsl interface
+1.2.78 fix: fix amac_person_fund_org_list interface
+1.2.79 fix: fix amac_person_fund_org_list interface
+1.2.80 fix: fix sw_index_daily interface
+1.2.81 fix: fix stock_us_hist_fu interface
+1.2.82 fix: fix spot_symbol_table_sge interface
 """
 
-__version__ = "1.2.53"
+__version__ = "1.2.82"
 __author__ = "Albert King"
 
 import sys
@@ -1687,6 +1716,26 @@ if sys.version_info < (3, 7):
     sys.exit(1)
 
 del sys
+
+"""
+上海黄金交易所-数据资讯-行情走势
+"""
+from akshare.spot.spot_sge import (
+    spot_hist_sge,
+    spot_symbol_table_sge,
+    spot_silver_benchmark_sge,
+    spot_golden_benchmark_sge,
+)
+
+"""
+富途牛牛-美股
+"""
+from akshare.stock_feature.stock_us_hist_futunn import stock_us_hist_fu
+
+"""
+股票回购
+"""
+from akshare.stock.stock_repurchase_em import stock_repurchase_em
 
 """
 东方财富-行业板块
@@ -2070,15 +2119,15 @@ from akshare.stock_feature.stock_em_ztb import (
 中国-香港-宏观
 """
 from akshare.economic.macro_china_hk import (
-    marco_china_hk_cpi,
-    marco_china_hk_cpi_ratio,
-    marco_china_hk_trade_diff_ratio,
-    marco_china_hk_gbp_ratio,
-    marco_china_hk_building_amount,
-    marco_china_hk_building_volume,
-    marco_china_hk_gbp,
-    marco_china_hk_ppi,
-    marco_china_hk_rate_of_unemployment,
+    macro_china_hk_cpi,
+    macro_china_hk_cpi_ratio,
+    macro_china_hk_trade_diff_ratio,
+    macro_china_hk_gbp_ratio,
+    macro_china_hk_building_amount,
+    macro_china_hk_building_volume,
+    macro_china_hk_gbp,
+    macro_china_hk_ppi,
+    macro_china_hk_rate_of_unemployment,
 )
 
 """
@@ -2776,7 +2825,7 @@ from akshare.bond.bond_zh_cov_sina import (
     bond_zh_cov_info,
     bond_zh_hs_cov_min,
 )
-from akshare.bond.bond_convert import bond_cov_jsl
+from akshare.bond.bond_convert import bond_cov_jsl, bond_conv_adj_logs_jsl
 
 """
 for pro api
@@ -3042,6 +3091,8 @@ from akshare.index.index_sw import (
     sw_index_cons,
     sw_index_daily,
     sw_index_daily_indicator,
+    sw_index_third_cons,
+    sw_index_third_info,
 )
 
 """
@@ -3458,12 +3509,12 @@ from akshare.futures.cot import (
 )
 
 """
-大宗商品仓单数据
+大宗商品期货仓单数据
 """
 from akshare.futures.receipt import get_receipt
 
 """
-大宗商品展期收益率数据
+大宗商品期货展期收益率数据
 """
 from akshare.futures.futures_roll_yield import get_roll_yield_bar, get_roll_yield
 

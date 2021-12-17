@@ -154,6 +154,8 @@
  "sw_index_cons"  # 申万一级、二级板块成份
  "sw_index_daily"  # 申万一级、二级历史行情
  "sw_index_daily_indicator"  # 申万一级、二级历史行情指标
+ "sw_index_third_info"  # 申万三级信息
+ "sw_index_third_cons"  # 申万三级信息成份
  # 空气质量
  "air_quality_hist"  # 空气质量历史数据
  "air_quality_rank"  # 空气质量排行
@@ -371,7 +373,8 @@
  "bond_zh_hs_cov_spot"  # 债券-沪深可转债-实时行情数据
  "bond_zh_cov"  # 债券-可转债数据一览表
  "bond_cov_comparison"  # 债券-可转债数据比价
- "bond_cov_jsl"  # 可转债转股价变动
+ "bond_cov_jsl"  # 可转债实时数据-集思录
+ "bond_conv_adj_logs_jsl"  # 可转债转股价变动-集思录
  # 中国-商业特许经营数据
  "franchise_china"  # 中国-商业特许经营数据
  # 慈善中国
@@ -730,15 +733,15 @@
  # 配股
  "stock_em_pg"  # 配股
  # 中国-香港-宏观经济指标
- "marco_china_hk_cpi"  # 中国-香港-消费者物价指数
- "marco_china_hk_cpi_ratio"  # 中国-香港-消费者物价指数年率
- "marco_china_hk_rate_of_unemployment"  # 中国-香港-失业率
- "marco_china_hk_gbp"  # 中国-香港-香港 GDP
- "marco_china_hk_gbp_ratio"  # 中国-香港-香港 GDP 同比
- "marco_china_hk_building_volume"  # 中国-香港-香港楼宇买卖合约数量
- "marco_china_hk_building_amount"  # 中国-香港-香港楼宇买卖合约成交金额
- "marco_china_hk_trade_diff_ratio"  # 中国-香港-香港商品贸易差额年率
- "marco_china_hk_ppi"  # 中国-香港-香港制造业 PPI 年率
+ "macro_china_hk_cpi"  # 中国-香港-消费者物价指数
+ "macro_china_hk_cpi_ratio"  # 中国-香港-消费者物价指数年率
+ "macro_china_hk_rate_of_unemployment"  # 中国-香港-失业率
+ "macro_china_hk_gbp"  # 中国-香港-香港 GDP
+ "macro_china_hk_gbp_ratio"  # 中国-香港-香港 GDP 同比
+ "macro_china_hk_building_volume"  # 中国-香港-香港楼宇买卖合约数量
+ "macro_china_hk_building_amount"  # 中国-香港-香港楼宇买卖合约成交金额
+ "macro_china_hk_trade_diff_ratio"  # 中国-香港-香港商品贸易差额年率
+ "macro_china_hk_ppi"  # 中国-香港-香港制造业 PPI 年率
  # 涨停板行情
  "stock_em_zt_pool"  # 涨停板行情-涨停股池
  "stock_em_zt_pool_previous"  # 涨停板行情-昨日涨停股池
@@ -956,6 +959,16 @@
  "stock_board_industry_cons_em"  # 行业板块-板块成份
  "stock_board_industry_hist_em"  # 行业板块-历史行情
  "stock_board_industry_name_em"  # 行业板块-板块名称
+ # 股票回购数据
+ "stock_repurchase_em"  # 股票回购数据
+ # 品种字典
+ "futures_hq_subscribe_exchange_symbol"  # 品种字典
+ # 富途-美股
+ "stock_us_hist_fu"  # 富途-美股
+ # 上海黄金交易所
+ "spot_hist_sge"  # 上海黄金交易所-历史行情走势
+ "spot_golden_benchmark_sge"  # 上海金基准价
+ "spot_silver_benchmark_sge"  # 上海银基准价
 ```
 
 ## 案例演示
@@ -966,6 +979,7 @@
 
 ```python
 import akshare as ak
+
 get_roll_yield_bar_df = ak.get_roll_yield_bar(type_method="date", var="RB", start_day="20180618", end_day="20180718", plot=True)
 print(get_roll_yield_bar_df)
 ```
@@ -973,7 +987,7 @@ print(get_roll_yield_bar_df)
 结果显示: 日期, 展期收益率, 最近合约, 下一期合约
 
 ```
-            roll_yield near_by deferred
+              roll_yield  near_by deferred
 2018-06-19    0.191289  RB1810   RB1901
 2018-06-20    0.192123  RB1810   RB1901
 2018-06-21    0.183304  RB1810   RB1901
